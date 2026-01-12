@@ -17,6 +17,10 @@ impl Series {
 
         Series { name, data, dtype }
     }
+
+    pub fn len(&self) -> usize {
+        self.data.len()
+    }
 }
 
 impl fmt::Display for Series {
