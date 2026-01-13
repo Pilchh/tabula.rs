@@ -4,9 +4,9 @@ use crate::dataframe::core::{Dtype, SeriesData, series_data::IntoSeriesData};
 
 #[derive(Debug)]
 pub struct Series {
-    name: String,
-    data: SeriesData,
-    dtype: Dtype,
+    pub name: String,
+    pub data: SeriesData,
+    pub dtype: Dtype,
 }
 
 impl Series {
