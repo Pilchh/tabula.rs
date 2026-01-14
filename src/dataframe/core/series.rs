@@ -2,7 +2,7 @@ use std::fmt;
 
 use crate::dataframe::core::{Dtype, SeriesData, series_data::IntoSeriesData};
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Series {
     pub name: String,
     pub data: SeriesData,

@@ -2,7 +2,7 @@ use std::fmt;
 
 use crate::dataframe::{core::dtype::Dtype, utils::strings::format_f64};
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum SeriesData {
     Int64(Vec<i64>),
     Float64(Vec<f64>),

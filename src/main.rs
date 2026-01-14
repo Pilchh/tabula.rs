@@ -6,6 +6,8 @@ fn main() {
 
     let s_v = vec![s_a, s_b];
     let df = DataFrame::from_series(s_v).unwrap();
-
     println!("{}", df);
+
+    let df_a = df.select(&["a"]);
+    println!("{}", df_a);
 }

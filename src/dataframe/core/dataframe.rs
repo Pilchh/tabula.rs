@@ -39,6 +39,22 @@ impl DataFrame {
         (self.height, self.series.len())
     }
 
+    pub fn select(&self, names: &[&str]) -> DataFrame {
+        let series: Vec<Series> = names
+            .into_iter()
+            .map(|n| self.get_series(n).clone())
+            .collect();
+
+        DataFrame::from_series(series).expect("series lengths should all match")
+    }
+
+    fn get_series(&self, name: &str) -> &Series {
+        self.series
+            .iter()
+            .find(|s| s.name == name)
+            .expect("Series does not exist in dataframe")
+    }
+
     fn are_valid_series(series: &Vec<Series>) -> bool {
         if let Some(first) = series.first() {
             let length = first.len();
