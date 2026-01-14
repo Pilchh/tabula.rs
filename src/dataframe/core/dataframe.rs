@@ -39,10 +39,6 @@ impl DataFrame {
         (self.height, self.series.len())
     }
 
-    fn is_valid_series(&self, series: Series) -> bool {
-        series.len() == self.height
-    }
-
     fn are_valid_series(series: &Vec<Series>) -> bool {
         if let Some(first) = series.first() {
             let length = first.len();
